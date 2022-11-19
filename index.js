@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
     res.json({message: "Welcome"})
 })
 
-app.get('/keyword/:', (res, res) => {
+app.get('/keyword/:', (res, req) => {
     let keyword = req.params.keyword;
 
     (async () => {
