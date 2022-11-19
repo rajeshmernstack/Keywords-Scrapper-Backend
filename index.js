@@ -24,5 +24,8 @@ app.get("/", (req, res) => {
     })();
 
 })
+app.get("/status", (req, res) => {
+    res.json({status: 1, message: "Server is Running"})
+})
 
-app.listen(3000)
+app.listen()
