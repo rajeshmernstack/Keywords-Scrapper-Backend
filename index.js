@@ -4,7 +4,11 @@ const puppeteer = require('puppeteer');
 
 
 app.get("/", (req, res) => {
-    let keyword = req.query.keyword;
+    res.json({message: "Welcome"})
+})
+
+app.get('/keyword/:', (res, res) => {
+    let keyword = req.params.keyword;
 
     (async () => {
         var data = [];
@@ -22,8 +26,7 @@ app.get("/", (req, res) => {
 
         await browser.close();
     })();
-
-})
+} )
 app.get("/status", (req, res) => {
     res.json({status: 1, message: "Server is Running"})
 })
