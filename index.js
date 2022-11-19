@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
     res.json({message: "Welcome"})
 })
 
-app.get('/keyword/:seed', (res, req) => {
+app.get('/keyword/:seed', (req, res) => {
     let keyword = req.params.seed;
 
     (async () => {
@@ -31,4 +31,4 @@ app.get("/status", (req, res) => {
     res.json({status: 1, message: "Server is Running"})
 })
 
-app.listen()
+app.listen(3000)
