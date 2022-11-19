@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 
 
 app.get("/", (req, res) => {
-    res.json({message: "Welcome"})
+    res.json({ message: "Welcome" })
 })
 
 app.get('/keyword/:seed', (req, res) => {
@@ -12,7 +12,11 @@ app.get('/keyword/:seed', (req, res) => {
 
     (async () => {
         var data = [];
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({
+            headless: false,
+            args: ['--no-sandbox'],
+            timeout: 60000,
+        });
         const page = await browser.newPage();
         await page.setCacheEnabled(true);
         await page.goto(`https://www.keyword.io/tool/google-longtail-finder?q=${keyword}&audience=en-us`);
@@ -26,9 +30,9 @@ app.get('/keyword/:seed', (req, res) => {
 
         await browser.close();
     })();
-} )
+})
 app.get("/status", (req, res) => {
-    res.json({status: 1, message: "Server is Running"})
+    res.json({ status: 1, message: "Server is Running" })
 })
 
-app.listen(3000)
+app.listen()
