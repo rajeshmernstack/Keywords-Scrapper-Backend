@@ -25,10 +25,7 @@ app.get('/keyword/:seed', async (req, res) => {
 
     await browser.close();
     data = data.filter(n => n)
-    await res.json({ data: data });
-
-
-
+    res.json({ data: data });
 })
 app.get("/status", (req, res) => {
     res.json({ status: 1, message: "Server is Running" })
