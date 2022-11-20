@@ -1,7 +1,10 @@
 const express = require('express');
 const app = express();
 const puppeteer = require('puppeteer');
+var cors = require('cors')
 require('dotenv').config()
+app.use(cors())
+
 
 app.get("/", (req, res) => {
     res.json({ message: "Welcome" })
