@@ -30,6 +30,7 @@ app.get('/keyword/:seed', (req, res) => {
 
         await browser.close();
     })();
+    res.json({status: "The app takes too much time"})
 })
 app.get("/status", (req, res) => {
     res.json({ status: 1, message: "Server is Running" })
