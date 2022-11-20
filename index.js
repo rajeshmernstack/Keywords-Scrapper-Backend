@@ -25,7 +25,7 @@ app.get('/keyword/:seed', async (req, res) => {
 
     await browser.close();
     data = data.filter(n => n)
-    res.json({ data: data });
+    await res.json({ data: data });
 
 
 
