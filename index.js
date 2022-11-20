@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const puppeteer = require('puppeteer');
-
+require('dotenv').config()
 
 app.get("/", (req, res) => {
     res.json({ message: "Welcome" })
@@ -35,4 +35,6 @@ app.get("/status", (req, res) => {
     res.json({ status: 1, message: "Server is Running" })
 })
 
-app.listen(5000)
+const port = process.env.PORT || 5000
+
+app.listen(port)
