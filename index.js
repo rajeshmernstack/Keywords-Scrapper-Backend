@@ -13,7 +13,7 @@ app.get('/keyword/:seed', async (req, res) => {
     var data = [];
     const browser = await puppeteer.launch({
         headless: true,
-        args: ['--no-sandbox'],
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
         timeout: 60000,
     });
     const page = await browser.newPage();
