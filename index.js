@@ -35,4 +35,4 @@ app.get("/status", (req, res) => {
     res.json({ status: 1, message: "Server is Running" })
 })
 
-app.listen()
+app.listen(3000)
